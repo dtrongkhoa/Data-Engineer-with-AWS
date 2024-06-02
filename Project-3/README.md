@@ -37,7 +37,7 @@ Projects for Data Engineer with AWS course on Udacity
 Query Customer Trusted Zone
 
 ![alt text](./images/customer_trusted_all.png)
-![alt text](./images/customer__trusted_validated.png)
+![alt text](./images/customer_trusted_validated.png)
 
 ## Trusted to Curated Zone
 
