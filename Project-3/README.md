@@ -18,12 +18,11 @@ Projects for Data Engineer with AWS course on Udacity
 
     Some of the early adopters have agreed to share their data for research purposes. Only these customers’ Step Trainer and accelerometer data should be used in the training data for the machine learning model.
 
-
 # Data Validation
 
     Checking the number of rows of landing data inside s3
 
-    !(./images/data_validation.png)
+!(./images/data_validation.png)
 
 ## Staging
 
