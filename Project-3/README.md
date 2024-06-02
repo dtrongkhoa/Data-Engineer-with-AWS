@@ -18,99 +18,32 @@ Projects for Data Engineer with AWS course on Udacity
 
     Some of the early adopters have agreed to share their data for research purposes. Only these customers’ Step Trainer and accelerometer data should be used in the training data for the machine learning model.
 
-# Data Validation
+## Data Validation
 
     Checking the number of rows of landing data inside s3
 
 ![alt text](./images/data_validation.png)
 
-## Staging
+    Query customer_landing and accelerometer_landing tables:
 
-    staging_events (
-    artist          varchar,
-    auth            varchar,
-    firstName       varchar,
-    gender          char(1),
-    itemInSession   int,
-    lastName        varchar,
-    length          float,
-    level           varchar,
-    location        text,
-    method          varchar,
-    page            varchar,
-    registration    float,
-    sessionId       int,
-    song            varchar,
-    status          int,
-    ts              bigint,
-    userAgent       text,
-    userId          varchar
-    );
+![alt text](./images/customer_landing.png)
+![alt text](./images/accelerometer_landing.png)
 
-    staging_songs (
-    num_songs           int,
-    artist_id           varchar,
-    artist_latitude     float,
-    artist_longitude    float,
-    artist_location     text,
-    artist_name         varchar,
-    song_id             varchar,
-    title               varchar,
-    year                int,
-    duration            float
-    );
+## Landing to Trusted Zone
 
-## Fact table
+    customer_trusted: filter customers that accept their data to be used for research.
+    accelerometer_trusted: only store accelerometer data from customer who agreed to share data for research purposes.
 
-    songplay (
-    songplay_id         INT IDENTITY(0,1) PRIMARY KEY,
-    start_time          timestamp NOT NULL,
-    user_id             varchar NOT NULL,
-    level               varchar,
-    song_id             varchar NOT NULL,
-    artist_id           varchar NOT NULL,
-    session_id          int,
-    location            text,
-    user_agent          text
-    );
+Query Customer Trusted Zone
 
-## Dimension tables
+![alt text](./images/customer_trusted_all.png)
+![alt text](./images/customer_validated.png)
 
-    user (
-    user_id             varchar PRIMARY KEY,
-    first_name          varchar,
-    last_name           varchar,
-    gender              char(1),
-    level               varchar
-    );
+## Trusted to Curated Zone
 
-    song (
-    song_id             varchar PRIMARY KEY,
-    title               varchar,
-    artist_id           varchar NOT NULL,
-    year                int,
-    duration            float
-    );
+    customer_curated: only customers that have accelerometer data and agreed their data to be used for research purpose.
+    step_trainer_curated - machine_learning-curated: an aggregated table that has each of the Step Trainer Readings, and the associated accelerometer reading data for the same timestamp, but only for customers who have agreed to share their data
 
-    artist(
-    artist_id           varchar PRIMARY KEY,
-    name                varchar,
-    location            text,
-    latitude            float,
-    longitude           float
-    );
+## All Tables
 
-    time(
-    start_time          timestamp PRIMARY KEY,
-    hour                int,
-    day                 int,
-    week                int,
-    month               int,
-    year                int,
-    weekday             int
-    );
-
-# Notes:
-
-    1. To run on local machine, remember to create virtual environment
-    2. Activate virtual environment, install psycopg2  using command: pip install psycopg2
+![alt text](./images/all_tables.png)
