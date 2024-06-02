@@ -22,7 +22,7 @@ Projects for Data Engineer with AWS course on Udacity
 
     Checking the number of rows of landing data inside s3
 
-!(./images/data_validation.png)
+![alt text](./images/data_validation.png)
 
 ## Staging
 
