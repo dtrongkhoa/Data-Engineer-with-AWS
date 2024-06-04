@@ -28,6 +28,7 @@ Projects for Data Engineer with AWS course on Udacity
 
 ![alt text](./images/customer_landing.png)
 ![alt text](./images/accelerometer_landing.png)
+![alt text](./images/step_trainer_landing.png)
 
 ## Landing to Trusted Zone
 
@@ -38,11 +39,16 @@ Query Customer Trusted Zone
 
 ![alt text](./images/customer_trusted_all.png)
 ![alt text](./images/customer_trusted_validated.png)
+![alt text](./images/accelerometer_trusted.png)
+![alt text](./images/step_trainer_trusted.png)
 
 ## Trusted to Curated Zone
 
     customer_curated: only customers that have accelerometer data and agreed their data to be used for research purpose.
     step_trainer_curated - machine_learning-curated: an aggregated table that has each of the Step Trainer Readings, and the associated accelerometer reading data for the same timestamp, but only for customers who have agreed to share their data
+
+![alt text](./images/customer_curated.png)
+![alt text](./images/machine_learning_curated.png)
 
 ## All Tables
 
